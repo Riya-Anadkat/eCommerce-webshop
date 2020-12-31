@@ -2,12 +2,12 @@ import React, { useState } from 'react';
 import { Paper, Stepper, Step, StepLabel, Typography, CircularProgress, Divider, Button } from '@material-ui/core'
 import useStyles from './styles';
 import DetailsForm from '../DetailsForm';
-import PaymentForm from '../PaymentForm'
+import PaymentForm from '../PaymentForm';
 
-const steps = ['Details','Payment']
+const steps = ['Customer Details','Payment']
 
-const Checkout = () => {
-    const [activeStep, setActiveStep] = useState(2);
+const Checkout = ( {products} ) => {
+    const [activeStep, setActiveStep] = useState(0);
     const classes = useStyles();
 
     const Confirmation = () => (
@@ -15,10 +15,10 @@ const Checkout = () => {
             Confirmation
         </div>
     )
-    
+
     const Form = () => activeStep === 0
-        ? <DetailsForm />
-        : <PaymentForm />
+        ? <DetailsForm products={products} />
+        : <PaymentForm products={products} />
 
     return (
         <>
@@ -34,7 +34,8 @@ const Checkout = () => {
                     ))}
                 </Stepper>
                 {activeStep === steps.length ? <Confirmation /> : <Form />}
-                {/* if we are on the last step  */}
+                
+                
             </Paper>
         </main>
         </>
