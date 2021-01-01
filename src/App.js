@@ -44,7 +44,7 @@ const App = () => {
     }, []);
     // only runs at the start
 
-    console.log(cart);
+    //console.log(products);
 
     return (
         <Router>
@@ -59,11 +59,10 @@ const App = () => {
                             handleUpdateCartQty={handleUpdateCartQty}
                             handleRemoveFromCart={handleRemoveFromCart}
                             handleEmptyCart={handleEmptyCart}
-                            products={products}
                         />    
                     </Route>
                     <Route exact path="/checkout">
-                        <Checkout cart= {products} />
+                        <Checkout cart={cart} />
                     </Route>
                 </Switch>
             </div>

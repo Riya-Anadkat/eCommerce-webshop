@@ -1,18 +1,19 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Container, Typography, Button, Grid } from '@material-ui/core';
 import { Link } from 'react-router-dom';
 import useStyles from './styles';
 import CartItem from './CartItem/CartItem';
 import ProductForm from './ProductForm';
+import { commerce } from '../../lib/commerce';
 
-const Cart = ({ cart, handleUpdateCartQty, handleRemoveFromCart, handleEmptyCart, products }) => {
+const Cart = ({ cart, handleUpdateCartQty, handleRemoveFromCart, handleEmptyCart }) => {
     // const isEmpty = !cart.line_items.length;
     
     //if lenght is 0, isEmpty would be true
 
     const classes = useStyles();
 
-
+    
     const EmptyCart = () => (
         <Typography variant="subtitle1">
             You have no items in your shopping cart. 

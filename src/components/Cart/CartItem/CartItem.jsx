@@ -13,7 +13,7 @@ const CartItem = ({ item, onUpdateCartQty, onRemoveFromCart }) => {
                 <Typography variant="h4"> {item.name}  </Typography>
                 <Typography variant="h5"> {item.line_total.formatted_with_symbol}</Typography>
                 </div>
-                <ProductForm />
+                <ProductForm  item={item}/>
             </CardContent>
             <CardActions className={classes.cardActions}>
                 <div className={classes.buttons}>
