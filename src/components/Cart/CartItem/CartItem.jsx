@@ -1,7 +1,6 @@
 import React from 'react';
 import { Typography, Button, Card, CardActions, CardContent, CardMedia } from '@material-ui/core';
 import useStyles from './styles';
-import ProductForm from '../../Cart/ProductForm';
 
 const CartItem = ({ item, onUpdateCartQty, onRemoveFromCart }) => {
     const classes = useStyles();
@@ -13,7 +12,7 @@ const CartItem = ({ item, onUpdateCartQty, onRemoveFromCart }) => {
                 <Typography variant="h4"> {item.name}  </Typography>
                 <Typography variant="h5"> {item.line_total.formatted_with_symbol}</Typography>
                 </div>
-                <ProductForm  item={item}/>
+                
             </CardContent>
             <CardActions className={classes.cardActions}>
                 <div className={classes.buttons}>
