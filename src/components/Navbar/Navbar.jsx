@@ -13,15 +13,18 @@ const Navbar = ({ totalItems }) => {
 
     return (
         <>
-            <AppBar position= "fixed" className={classes.appBar} color='inherit'>
+            <AppBar position= "fixed" className={classes.appBar} color="inherit" >
                 <Toolbar>
                     <Typography component={Link} to="/" variant="h5" className={classes.title} color="inherit">
                         <img src={logo} alt="Commerce.js" height="45px" className={classes.image} />
                             the eyeA store 
                     </Typography>
+                    <Typography component={Link} to="/products" variant="h5" className={classes.title} color="inherit">
+                            products
+                    </Typography>
                     <div className={classes.grow} />
                     {/* button is only shown when the user is in on the homepage */}
-                    {location.pathname === '/' && (
+                    {location.pathname === '/products' && (
                     <div className={classes.button}>
                         <IconButton component={Link} to="/cart" aria-label="Show cart items" color="inherit" fontSize="large" >
                             <Badge badgeContent={totalItems} color= "secondary">
