@@ -17,7 +17,7 @@ const Cart = ({ cart, handleUpdateCartQty, handleRemoveFromCart, handleEmptyCart
     const EmptyCart = () => (
         <Typography variant="subtitle1">
             You have no items in your shopping cart. 
-            <Link to="/" className={classes.link}> Add some!</Link>
+            <Link to="/products" className={classes.link}> Add some!</Link>
         </Typography>
       );
 
