@@ -27,8 +27,8 @@ const Products = ({ products, onAddToCart }) => {
         <main className= {classes.content}>
             <div className= {classes.toolbar}/>
 
-            <input value={searchValue} onChange={(e) => setSearchValue(e.target.value)} />
-            <button onClick={handleClick}>Search</button>
+            {/* <input value={searchValue} onChange={(e) => setSearchValue(e.target.value)} />
+            <button onClick={handleClick}>Search</button> */}
 
             <Typography variant="body1" gutterBottom  align= "center">
                 Digital Drawings are sent through email 3-4 weeks after purchase

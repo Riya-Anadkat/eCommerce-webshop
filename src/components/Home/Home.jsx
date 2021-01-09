@@ -1,9 +1,11 @@
 import React from 'react';
-import { Card, CardMedia, CardContent, CardActions, Typography, IconButton, Grid, Paper } from '@material-ui/core';
+import { Card, CardMedia, CardContent, CardActions, Typography, IconButton, Grid, Paper, Button } from '@material-ui/core';
 import useStyles from '../Products/styles';
 import Carousel from 'react-bootstrap/Carousel';
 import logo from '../../assets/logo.png';
 import images from './images';
+import { Link } from 'react-router-dom';
+
 
 const Home = ({ }) => {
 
@@ -15,6 +17,7 @@ const Home = ({ }) => {
             
 
             <Paper className= {classes.paper}>
+            <br />
                 <Typography variant="h4" gutterBottom  align="center">
                     Welcome to the eyeA Store 
                 </Typography>
@@ -33,8 +36,8 @@ const Home = ({ }) => {
             <Grid container justify = "center" spacing={4}>
                     {images.map(({id, src, title, description}) => (
                         <Grid item key = {id} xs={12} sm={6} lg={3}>
-                            <Card className= {classes.root} gutterBottom >
-                            <Typography align="center"> <img key={id} src={src} title={title} alt={description} height="300px" /> </Typography>
+                            <Card className= {classes.root} gutterBottom  >
+                            <Typography align="center"> <img key={id} src={src} title={title} alt={description} height="300px"  /> </Typography>
                             </Card>
                         </Grid>
                     ))}
@@ -45,9 +48,12 @@ const Home = ({ }) => {
 
             <Typography variant="subtitle2" gutterBottom  align="center">
                 "Creativity is contagious, pass it on" - Albert Einstein
+                
             </Typography>
             
-            
+            <Typography variant="subtitle2" gutterBottom  align="center">
+                <Button component={Link} variant="outlined" type="button" to="/products" >View Products</Button>
+            </Typography>
 
         </main>
     )

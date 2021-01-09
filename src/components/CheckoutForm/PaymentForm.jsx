@@ -101,8 +101,8 @@ const PaymentForm = ({ checkoutToken, nextStep, backStep, customerData, onCaptur
       const orderData = {
         line_items: checkoutToken.live.line_items,
         customer: { firstname: customerData.firstName, lastname: customerData.lastName, email: customerData.email },
-        shipping: { name: 'International', street: customerData.address1, town_city: customerData.city, county_state: customerData.shippingSubdivision, postal_zip_code: customerData.zip, country: customerData.shippingCountry },
-        fulfillment: { shipping_method: customerData.shippingOption },
+        // shipping: { name: 'International', street: customerData.address1, town_city: customerData.city, county_state: customerData.shippingSubdivision, postal_zip_code: customerData.zip, country: customerData.shippingCountry },
+        // fulfillment: { shipping_method: customerData.shippingOption },
         payment: {
           gateway: 'stripe',
           stripe: {

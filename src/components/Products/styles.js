@@ -5,9 +5,13 @@ export default makeStyles((theme) => ({
   content: {
     flexGrow: 1,
     backgroundColor: theme.palette.background.default,
-    padding: theme.spacing(3),
+    // padding: theme.spacing(9),
+  },
+  paper: {
+    boxShadow: "2px 2px 8px #706464",
   },
   root: {
     flexGrow: 1,
+    boxShadow: "2px 2px 8px #706464",
   },
 }));
