@@ -18,7 +18,7 @@ const Navbar = ({ totalItems }) => {
                 <Toolbar>
                     <Typography component={Link} to="/" variant="subtitle1" className={classes.title} color="inherit">
                         <img src={logo} alt="logo" height="115px" className={classes.image} />
-                            Home 
+                            home 
                     </Typography>
                     <Typography component={Link} to="/products" variant="subtitle1" className={classes.title} color="inherit">
                             products

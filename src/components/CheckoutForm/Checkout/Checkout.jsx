@@ -3,7 +3,7 @@ import { CssBaseline, Paper, Stepper, Step, StepLabel, Typography, CircularProgr
 import { Link, useHistory } from 'react-router-dom';
 
 import { commerce } from '../../../lib/commerce';
-import AddressForm from '../DetailsForm';
+import DetailsForm from '../DetailsForm';
 import PaymentForm from '../PaymentForm';
 import useStyles from './styles';
 
@@ -12,7 +12,8 @@ const steps = ['Customer Order Details', 'Payment details'];
 const Checkout = ({ cart, onCaptureCheckout, order, error }) => {
   const [checkoutToken, setCheckoutToken] = useState(null);
   const [activeStep, setActiveStep] = useState(0);
- 
+  const [customerData, setCustomerData] = useState({});
+
   const classes = useStyles();
   const history = useHistory();
 
@@ -27,7 +28,7 @@ const Checkout = ({ cart, onCaptureCheckout, order, error }) => {
           console.log(token);
           setCheckoutToken(token);
         } catch {
-          if (activeStep !== steps.length) history.push('/');
+          if (activeStep !== steps.length) history.push('/products');
         }
       };
 
@@ -36,6 +37,7 @@ const Checkout = ({ cart, onCaptureCheckout, order, error }) => {
   }, [cart]);
 
   const test = (data) => {
+    setCustomerData(data);
 
     nextStep();
   };
@@ -61,12 +63,13 @@ const Checkout = ({ cart, onCaptureCheckout, order, error }) => {
         <Typography variant="h5">Error: {error}</Typography>
         <br />
         <Button component={Link} variant="outlined" type="button" to="/">Back to home</Button>
+        <Button component={Link} variant="outlined" type="button" to="/products">Back to products</Button>
       </>
     );
   }
   const Form = () => (activeStep === 0
-    ? <AddressForm checkoutToken={checkoutToken} nextStep={nextStep} test={test} />
-    : <PaymentForm checkoutToken={checkoutToken} nextStep={nextStep} backStep={backStep} onCaptureCheckout={onCaptureCheckout} />);
+    ? <DetailsForm checkoutToken={checkoutToken} nextStep={nextStep} setCustomerData={setCustomerData} test={test} />
+    : <PaymentForm checkoutToken={checkoutToken} nextStep={nextStep} backStep={backStep} onCaptureCheckout={onCaptureCheckout} customerData={customerData} />);
 
   return (
     <>

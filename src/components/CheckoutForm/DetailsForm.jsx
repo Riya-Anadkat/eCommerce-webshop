@@ -63,8 +63,8 @@ const DetailsForm = ({ checkoutToken, test }) => {
         <form onSubmit={methods.handleSubmit((data) => test({ ...data }))}>
         {/* spreading data into an object */}
           <Grid >
-            <FormInput required name="firstName" label="First name" />
-            <FormInput required name="lastName" label="Last name" />
+            <FormInput required name="firstName" label="First Name" />
+            <FormInput required name="lastName" label="Last Name" />
             <FormInput required name="email" label="Email" />
 
             <br />

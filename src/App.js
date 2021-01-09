@@ -5,6 +5,7 @@ import { commerce } from './lib/commerce';
 import { Products, Navbar, Cart, Checkout, Home } from './components';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { Refresh } from '@material-ui/icons';
+require('dotenv').config();
 
 const App = () => {
     const [products, setProducts] = useState([]);

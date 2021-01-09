@@ -29,7 +29,7 @@ export default makeStyles((theme) => ({
     },
   },
   grow: {
-    flexGrow: 1,
+    flexGrow: 15,
   },
   search: {
     // position: 'relative',
