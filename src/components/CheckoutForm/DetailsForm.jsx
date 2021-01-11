@@ -13,6 +13,7 @@ const DetailsForm = ({ checkoutToken, test }) => {
 
 
   const ExtraField = ({ extrafield }) => {
+ 
     return (
       <div>
         {extrafield.name == "Image" ?
@@ -31,9 +32,10 @@ const DetailsForm = ({ checkoutToken, test }) => {
           :
           <div>
             <FormInput
-
-              required={extrafield.required}
-              name={extrafield.name}
+              //required={extrafield.required}
+              // name={extrafield.name}
+              
+              name={extrafield.id}
               label={extrafield.name}
 
             />
@@ -73,6 +75,7 @@ const DetailsForm = ({ checkoutToken, test }) => {
 
             {checkoutToken.products.map((product) => (
               <Grid item key={checkoutToken.id} >
+              
                 <Products product={product} />
               </Grid>
             ))}
